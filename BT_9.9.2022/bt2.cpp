@@ -3,22 +3,37 @@
 using namespace std;
 
 struct student {
-    double gpa;
-    string name;
+    double gpa, liter, math;
+    string name, type;
 };
 
 istream & operator >> (istream &in, student &st) {
 
     cout << "Nhap ten sinh vien: ";
     in >> st.name;
-    cout << "Nhap diem sinh vien: ";
-    in >> st.gpa;
+    cout << "Nhap diem van sinh vien: ";
+    st.liter = -1;
+    while (st.liter < 0 || st.liter > 10)
+        in >> st.liter;
+    cout << "Nhap diem toan sinh vien: ";
+    st.math = -1;
+    while (st.math < 0 || st.math > 10)
+        in >> st.math;
+    st.gpa = (st.liter + st.math) / 2;
+    if (st.gpa >= 8)
+        st.type = "Gioi";
+    else if (st.gpa >= 7)
+        st.type = "Kha";
+    else if (st.gpa >= 5)
+        st.type = "Trung binh";
+    else
+        st.type = "Yeu";
 
     return in;
 }
 
 ostream & operator << (ostream &out, const student &st) {
-    out << st.name << ": " << st.gpa;
+    out << st.name << " - van: " << st.liter << " toan: " << st.math << " gpa: " << st.gpa << " => " << st.type;
     return out;
 }
 
@@ -57,7 +72,7 @@ void merge(int l, int r, student *sl, bool cmp(const student &st1, const student
         sl[i] = tmp[i - l];
 }
 
-void mergeSort(int l, int r, student *sl, bool cmp(const student &st1, const student &st2) = inc) {
+void mergeSort(int l, int r, student *sl, bool cmp(const student &st1, const student &st2) = dec) {
     if (l >= r)
         return;
     int m = (l + r) / 2;
