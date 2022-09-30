@@ -26,7 +26,7 @@ int main() {
     cout << "DIEM TRUNG BINH HOC SINH 3: ";
     cout << hs3.getGPA() << endl;
     cout << "XEP LOAI HOC SINH 3: ";
-    cout << hs1.xeploai();
-
+    cout << hs1.xeploai() << endl;
+    
     return 0;
 }

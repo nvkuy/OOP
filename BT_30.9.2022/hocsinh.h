@@ -1,3 +1,6 @@
+#ifndef hocsinh_h
+#define hocsinh_h
+
 #include <iostream>
 using namespace std;
 
@@ -101,3 +104,5 @@ string hocsinh::xeploai() {
         return "TRUNG BINH";
     return "YEU";
 }
+
+#endif
