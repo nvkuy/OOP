@@ -13,7 +13,7 @@ int main() {
     cout << p1 << endl;
     cout << "tu p2=" << p2.layTu() << ' ' << "mau p2=" << p2.layMau() << endl;
     p1.ganTu(2), p1.ganMau(4);
-    cout << "p1=" << p1 << " rut gon thanh ";
+    cout << "gan p1=" << p1 << " rut gon thanh ";
     p1.rutgon();
     cout << "p1=" << p1 << endl;
     cout << "p1+p2=" << add(p1, p2) << endl;
